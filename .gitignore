@@ -140,3 +140,4 @@ cython_debug/
 static_files/
 .idea/vcs.xml
 static/
+/static/
