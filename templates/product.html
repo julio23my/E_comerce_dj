@@ -4,7 +4,6 @@
 
 {% block content %}
 
-{% include 'navbar.html' %}
   <!--Main layout-->
   <main class="mt-5 pt-4">
     <div class="container dark-grey-text mt-5">
@@ -15,7 +14,7 @@
         <!--Grid column-->
         <div class="col-md-6 mb-4">
 
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/14.jpg" class="img-fluid" alt="">
+          <img src="{{ object.image.url }}" class="img-fluid" alt="">
 
         </div>
         <!--Grid column-->
@@ -63,6 +62,9 @@
 {#            </form>#}
           <a class="btn btn-primary btn-md my-0 p" href="{{ object.get_add_to_cart_url }}">Add to cart
                 <i class="fas fa-shopping-cart ml-1"></i>
+              </a>
+              <a class="btn btn-danger btn-md my-0 p" href="{{ object.get_remove_from_cart_url }}">Remove from cart
+
               </a>
 
           </div>
@@ -128,5 +130,4 @@
   </main>
   <!--Main layout-->
 
-  {% include 'footer.html' %}
 {% endblock  %}

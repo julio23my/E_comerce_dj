@@ -27,7 +27,10 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'core'
+    'crispy_forms',
+    'django_countries',
+    'core',
+
 ]
 
 MIDDLEWARE = [
@@ -77,15 +80,8 @@ DATABASES = {
     }
 }
 SITE_ID=1
+LOGIN_REDIRECT_URL = '/'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-if ENVIRONMENT == 'production':
-    DEBUG = False
-    SECRET_KEY = os.getenv('SECRET_KEY')
-    SESSION_COOKIE_SECURE = True
-    SECURE_BROWSER_XSS_FILTER = True
-    SECURE_CONTENT_TYPE_NOSNIFF = True
-    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-    SECURE_HSTS_SECONDS = 31536000
-    SECURE_REDIRECT_EXEMPT = []
-    SECURE_SSL_REDIRECT = True
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+STRIPE_PUBLIC_KEY = 'pk_test_51HXeUtCeO7A5G4TtcCCPFwGsR8CqaIUhYlyD66vFF7qqipd8oYigVzax6UFwqEhqh1hCND1iUpdtXzB1SscsSPjj005ujSef6j'
+STRIPE_SECRET_KEY = 'sk_test_51HXeUtCeO7A5G4TtseHYPZ8HWDG5ZrO0lduaPAmaqIuEjSYd2d52a4B0O4HSWooeLswFV8mWOIE0W0zeetct6QSs00t7whDPUf'

@@ -141,3 +141,4 @@ static_files/
 .idea/vcs.xml
 static/
 /static/
+!/.env
